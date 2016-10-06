@@ -1,0 +1,100 @@
+/*
+	Enter your app's CSS code here!
+*/
+body {
+    overflow-x: hidden;
+}
+
+.sidebar-wrapper {
+	background: #872C3C;
+	color: white;
+}
+.sidebar-wrapper li { 
+	list-style-type: none; }
+
+
+
+html,body,.container {
+    height:100%;
+}
+
+.container {
+    display:table;
+    width: 100%;
+    box-sizing: border-box;
+}
+.main_row {
+    height: 100%;
+    width: 100%;
+    display: table-row;
+}
+.row {
+}
+
+.row .no-float {
+  display: table-cell;
+  float: none;
+}
+
+
+#chat-header{ 
+  background: #CC425B; 
+}
+#chat-footer{ 
+  background: #CC425B; 
+  position:absolute; 
+  bottom:0; 
+  width:100%;  
+  color: white; 
+  text-align: center;
+  padding: 10px;
+}
+
+#game_title { 
+    color: white; 
+}
+
+.game_description p { 
+    color: white; 
+}
+
+/* unvisited link */
+a:link {
+    color: #A9F5F5;
+}
+/* visited link */
+a:visited {
+    color: #A9F5F5;
+}
+/* mouse over link */
+a:hover {
+    color: #A9F5F5;
+}
+/* selected link */
+a:active {
+    color: #A9F5F5;
+}
+
+.sidebar-nav a { 
+    color: white; 
+    font-size: 1.5em; 
+}
+.sidebar-nav a:hover {
+    font-weight: bold; 
+}
+
+#chat-body { 
+    background-color: #FFF7F9; 
+}
+
+
+.profile-picture { 
+    width: 130px; 
+    padding: 15px;
+}
+
+.message { 
+    padding: 20px 20px 20px 0px ;
+}
+
+
