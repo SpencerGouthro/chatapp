@@ -113,29 +113,29 @@ $(document).ready(function() {
       console.log("Oops! There was an error");
       console.log(error);
     });
-  });
+  });                 
 
   // opens a modal to add a new todo
   $("#btn-add-todo-window").click(function() {
     $("#add-modal").modal();
   });
-         /*  
+               // ****      
   // actually adds the todo
-  $("#btn-add-todo").click(function() {
+  $("#send-btn").click(function() {
 
-    var todoRef = database.ref('/todos/'+loggedUser.id);
+    var msgRef = database.ref('/messages/'+loggedUser.id);
 
     // make sure the new todo isn't blank
-    if ($("#new-todo-text").val() != "") {
+    if ($("#chat-msg").val() != "") {
 
       // add the todo and update the values. finally close the modal
-      todoRef.push($("#new-todo-text").val());
-      $("#new-todo-text").val("");
+      msg.push($("#chat-msg").val());
+      $("#chat-msg").val("");
       $("#add-modal").modal('hide');
     }
   });
 }); 
-                      */ 
+                      // ***
 
 // function to add a new user
 // (this isn't in document ready because it doesn't need to be initialized)
