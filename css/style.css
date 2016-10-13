@@ -1,6 +1,3 @@
-/*
-	Enter your app's CSS code here!
-*/
 body {
     overflow-x: hidden;
 }
@@ -8,11 +5,13 @@ body {
 .sidebar-wrapper {
 	background: #872C3C;
 	color: white;
+  padding: 30px;
+  font-size: 20px;
 }
+
 .sidebar-wrapper li { 
-	list-style-type: none; }
-
-
+	list-style-type: none; 
+}
 
 html,body,.container {
     height:100%;
@@ -23,12 +22,11 @@ html,body,.container {
     width: 100%;
     box-sizing: border-box;
 }
+
 .main_row {
     height: 100%;
     width: 100%;
     display: table-row;
-}
-.row {
 }
 
 .row .no-float {
@@ -36,10 +34,10 @@ html,body,.container {
   float: none;
 }
 
-
 #chat-header{ 
   background: #CC425B; 
 }
+
 #chat-footer{ 
   background: #CC425B; 
   position:absolute; 
@@ -47,15 +45,32 @@ html,body,.container {
   width:100%;  
   color: white; 
   text-align: center;
-  padding: 10px;
+  padding: 5px;
+  height:40px;
 }
+
+#chat-entertext {
+  padding:2em;
+  background: #872C3C;
+  bottom:40px;
+  left:0;
+  right:0;
+  position: absolute;
+}
+
+#chat-entertext input {
+  width: 100%;
+} 
 
 #game_title { 
     color: white; 
+    padding: 15px;
+    font-size: 30px;
 }
 
 .game_description p { 
     color: white; 
+    padding: 15px;
 }
 
 /* unvisited link */
@@ -77,16 +92,12 @@ a:active {
 
 .sidebar-nav a { 
     color: white; 
-    font-size: 1.5em; 
-}
-.sidebar-nav a:hover {
-    font-weight: bold; 
+    font-size: 30px;
 }
 
 #chat-body { 
     background-color: #FFF7F9; 
 }
-
 
 .profile-picture { 
     width: 130px; 
@@ -97,4 +108,6 @@ a:active {
     padding: 20px 20px 20px 0px ;
 }
 
-
+#btn-login { 
+color: black;
+}

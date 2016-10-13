@@ -12,15 +12,9 @@
 
 
 <!--
-
-******************************************************************************************************************
-                                            Put in news, http://codepen.io/UIT/pen/VKyPBw/ actual chat example
-Things to do with firebase: 
-profile
-rooms: (id, name, desc, messages [ Sender name, time, content ] )
-array of messages
-
-******************************************************************************************************************
+    http://codepen.io/UIT/pen/VKyPBw/ 
+    Things to get done:
+    Create channels, News part, Sign in with gitub, Login Screen, Logout Button, Hamburger Sidebar Menu,
 -->
 
     <body>
@@ -28,23 +22,25 @@ array of messages
         <!-- CODE YOUR HTML APP HERE! -->
         <div class="container">
             <div class="row main_row">
-
-                <div class="col-sm-2 sidebar-wrapper no-float">
-
-                    <h4>Welcome to Spencer's Gaming Chat Site! <br><br> Pick a game title to enter the game's chat room.</h4>
+                <div class="col-sm-3 sidebar-wrapper no-float">
+                    <p>Welcome to Spencer's Gaming Chat Site! <br><br> Pick a game title to enter the game's chat room.</p>
                         <ul class="sidebar-nav">
                         <br><li> <a href="">Call of Duty</a>   </li><br>
                             <li> <a href="">Grand Theft Auto</a>  </li><br>
                             <li> <a href="">Minecraft</a>  </li><br>
                             <li> <a href="">Rocket League</a>  </li>
-                        </ul>
+                        </ul> 
+                        <div id="btn-login" class="col-sm-8">
+                            <button id="#btn-login">Login through facebook</button>
+                        </div> 
                 </div>
-                <div class="col-sm-10  no-float">
+                <div class="col-sm-9 no-float">
 
                     <div id="chat-header" class="row">
                         <div class="col-sm-6">
                             <h1 id="game_title">This is the chat room title.</h1>
                         </div>
+
                    
                         <div class="col-sm-6 game_description">
                             <p> Description of game. <br> <br>
@@ -52,30 +48,35 @@ array of messages
                                 <a href="https://www.wikipedia.org">Wikipedia Page</a>, 
                                 <a href="https://www.youtube.com">Trailer</a>,
                                 <a href="https://www.google.ca">Official Game Site</a>.
-                            </p>
+                            </p>   
                         </div>
                     </div>
+
 
                     <div id="chat-body" class="row">
                         <div class="col-sm-2">
                             <img class="profile-picture" src="profilepic.jpg">
                         </div>
-                        <div class="col-sm-8">
+                        <div class="col-sm-7">
                             <p class="message">This is a message.<br>Date and Time of that message</p>
                         </div>
-
                     </div>
-                    
+
+                    <div id="chat-entertext" class="row">
+                        <div class="col-sm-9">
+                                <input id="chat_msg" type="text"/>
+                        </div>
+                        <div class="col-sm-3">
+                            <button>Send</button>
+                        </div>
+                    </div>
+
                     <div id="chat-footer" class="row">
-                    <p>This the footer. Copyright non existant. </p>
-
-
-
+                        <p>This the footer. Copyright non existant.</p>
                     </div>
                 </div>
             </div>
         </div>
-
 
 
 
