@@ -116,26 +116,24 @@ $(document).ready(function() {
   });                 
 
   // opens a modal to add a new todo
-  $("#btn-add-todo-window").click(function() {
-    $("#add-modal").modal();
-  });
-               // ****      
+  //$("#btn-add-todo-window").click(function() {
+  //});
+   
   // actually adds the todo
   $("#send-btn").click(function() {
 
-    var msgRef = database.ref('/messages/'+loggedUser.id);
+    var messageRef = database.ref('/messages'+loggedUser.id);
 
     // make sure the new todo isn't blank
     if ($("#chat-msg").val() != "") {
 
       // add the todo and update the values. finally close the modal
-      msg.push($("#chat-msg").val());
+      messageRef.push($("#chat-msg").val());
       $("#chat-msg").val("");
-      $("#add-modal").modal('hide');
     }
   });
 }); 
-                      // ***
+
 
 // function to add a new user
 // (this isn't in document ready because it doesn't need to be initialized)

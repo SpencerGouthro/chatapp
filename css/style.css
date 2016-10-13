@@ -50,7 +50,7 @@ html,body,.container {
 }
 
 #chat-msg {
-  padding:2em;
+  padding:20px;
   background: #872C3C;
   bottom:40px;
   left:0;
@@ -58,7 +58,7 @@ html,body,.container {
   position: absolute;
 }
 
-#chat-msg input {
+#chat-message input {
   width: 100%;
 } 
 
