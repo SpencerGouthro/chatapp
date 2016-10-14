@@ -96,6 +96,7 @@ $(document).ready(function() {
                   </div>
               `);
             }
+                        console.log(keys)
                   /*
             // complete a to-do, listens on the checkbox
             $(".todo-done").click(function() {
