@@ -58,7 +58,7 @@ html,body,.container {
   position: absolute;
 }
 
-#chat-message input {
+#chat-messages input {
   width: 100%;
 } 
 
@@ -92,7 +92,7 @@ a:active {
 
 .sidebar-nav a { 
     color: white; 
-    font-size: 30px;
+    font-size: 20px;
 }
 
 #chat-body { 

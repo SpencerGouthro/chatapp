@@ -75,9 +75,9 @@ $(document).ready(function() {
 
           var snapshotValue = snapshot.val();
           if (snapshotValue == undefined || snapshotValue == null) {
-            $(".chat-message").html(`
-                  <div class="col-sm-7">
-                    <p class="message">This is a message.</p>
+            $(".chat-messages").html(`
+                 <div class="col-sm-7">
+                    <p class="message">No messages yet.</p>
                   </div>
             `);
           }
@@ -85,12 +85,15 @@ $(document).ready(function() {
             var keys = Object.keys(snapshotValue); 
 
             // populate the div with the class 'todo-list'
-            $(".chat.message").html("");
+            $(".chat-messages").html("");
             for (var i = 0; i < keys.length; i++) {
-              $(".chat-message").append(`
-                   <div class="col-sm-7">
-                      <p class="message">This is a message.</p>
-                    </div>
+              $(".chat-messages").append(`
+                  <div class="col-sm-2">
+                    <input class="message" data-id="${keys[i]}">
+                  </div>
+                  <div class="col-sm-10">
+                    ${snapshotValue[keys[i]]}
+                  </div>
               `);
             }
                   /*
@@ -122,11 +125,11 @@ $(document).ready(function() {
     var messageRef = database.ref('/messages/'+loggedUser.id);
 
     // make sure the new todo isn't blank
-    if ($("#chat-message").val() != "") {
+    if ($("#chat-messages").val() != "") {
 
       // add the todo and update the values. finally close the modal
-      messageRef.push($("#chat-message").val());
-      $("#chat-message").val("");
+      messageRef.push($("#chat-messages").val());
+      $("#chat-messages").val("");
     }
   });
 }); 
