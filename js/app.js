@@ -67,46 +67,43 @@ $(document).ready(function() {
           if (!found) {
             loggedUser = addNewUser(result, profileRef);
           }
-        }
-                        /*
+        } 
+                         
         // listen for todos and update on the fly
-        var todoRef = database.ref('/todos/'+loggedUser.id);
-        todoRef.on('value', function(snapshot) {
+        var messageRef = database.ref('/messages/'+loggedUser.id);
+        messageRef.on('value', function(snapshot) {
 
           var snapshotValue = snapshot.val();
           if (snapshotValue == undefined || snapshotValue == null) {
-            $(".todo-list").html(`
-              <div class="col-sm-12">
-                No todos!
-              </div>
+            $(".chat-message").html(`
+                  <div class="col-sm-7">
+                    <p class="message">This is a message.</p>
+                  </div>
             `);
           }
           else {
-            var keys = Object.keys(snapshotValue);
+            var keys = Object.keys(snapshotValue); 
 
             // populate the div with the class 'todo-list'
-            $(".todo-list").html("");
+            $(".chat.message").html("");
             for (var i = 0; i < keys.length; i++) {
-              $(".todo-list").append(`
-                <div class="col-sm-2">
-                  <input class="todo-done" type="checkbox" data-id="${keys[i]}">
-                </div>
-                <div class="col-sm-10">
-                  ${snapshotValue[keys[i]]}
-                </div>
+              $(".chat-message").append(`
+                   <div class="col-sm-7">
+                      <p class="message">This is a message.</p>
+                    </div>
               `);
             }
-
+                  /*
             // complete a to-do, listens on the checkbox
             $(".todo-done").click(function() {
               var deleteID = $(this).data("id");
               var delTodoRef = database.ref('/todos/'+loggedUser.id+'/'+deleteID);
 
-              delTodoRef.remove();
-
-            });
+              delTodoRef.remove(); 
+ 
+            }); */
           }
-        }); */
+        }); 
       });
 
     }, function(error) {
@@ -122,7 +119,7 @@ $(document).ready(function() {
   // actually adds the todo
   $("#send-btn").click(function() {
 
-    var messageRef = database.ref('/messages'+loggedUser.id);
+    var messageRef = database.ref('/messages/'+loggedUser.id);
 
     // make sure the new todo isn't blank
     if ($("#chat-message").val() != "") {
@@ -151,5 +148,5 @@ function addNewUser(result, ref) {
 
 	// @NOTE: it's probably a good idea to place your event 
 	//		  listeners in here :)
-});
+
 
