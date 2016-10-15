@@ -1,18 +1,6 @@
-
 body {
     overflow-x: hidden;
 } 
-
-.sidebar-wrapper {
-	background: #872C3C;
-	color: white;
-  padding: 30px;
-  font-size: 20px;
-}
-
-.sidebar-wrapper li { 
-	list-style-type: none; 
-}
 
 html,body,.container {
     height:100%;
@@ -39,15 +27,44 @@ html,body,.container {
   background: #CC425B; 
 }
 
-#page-footer{ 
-  background: #CC425B; 
-  position:absolute; 
-  bottom:0; 
-  width:100%;  
-  color: white; 
-  text-align: center;
-  padding: 5px;
-  height:40px;
+#game_title { 
+    color: white; 
+    padding: 15px;
+    font-size: 30px;
+}
+
+.game_description p { 
+    color: white; 
+    padding: 15px;
+}
+
+.sidebar-wrapper {
+  background: #872C3C;
+  color: white;
+  padding: 30px;
+  font-size: 20px;
+
+}
+
+.sidebar-wrapper li { 
+  list-style-type: none; 
+}
+
+.sidebar-nav a { 
+    color: white; 
+    font-size: 20px;
+}
+
+#chat-body { 
+    background-color: #FFF7F9;
+}
+
+.message { 
+    padding: 20px 20px 20px 0px;
+}
+
+.chat-message {  
+    border: 1px solid white;
 }
 
 #chat-footer {
@@ -63,54 +80,37 @@ html,body,.container {
   width: 100%;
 } 
 
-#game_title { 
-    color: white; 
-    padding: 15px;
-    font-size: 30px;
-}
-
-.game_description p { 
-    color: white; 
-    padding: 15px;
+#page-footer{ 
+  background: #CC425B; 
+  position:absolute; 
+  bottom:0; 
+  width:100%;  
+  color: white; 
+  text-align: center;
+  padding: 5px;
+  height:40px;
 }
 
 /* unvisited link */
-a:link {
+.game_description a:link {
     color: #A9F5F5;
 }
 /* visited link */
-a:visited {
+.game_description a:visited {
     color: #A9F5F5;
 }
 /* mouse over link */
-a:hover {
+.game_description a:hover {
     color: #A9F5F5;
 }
 /* selected link */
-a:active {
+.game_description a:active {
     color: #A9F5F5;
-}
-
-.sidebar-nav a { 
-    color: white; 
-    font-size: 20px;
-}
-
-#chat-body { 
-    background-color: #FFF7F9; 
 }
 
 .profile-picture { 
     width: 130px; 
     padding: 15px;
-}
-
-.message { 
-    padding: 20px 20px 20px 0px;
-}
-
-.chat-message {  
-    border: 1px solid white;
 }
 
 #btn-login { 
