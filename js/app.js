@@ -75,7 +75,7 @@ $(document).ready(function() {
 
           var snapshotValue = snapshot.val();
           if (snapshotValue == undefined || snapshotValue == null) {
-            $(".chat-body").html(`
+            $("#chat-body").html(`
                  <div class="col-sm-7">
                     <p class="message">No messages yet.</p>
                   </div>
@@ -85,12 +85,9 @@ $(document).ready(function() {
             var keys = Object.keys(snapshotValue); 
 
             // populate the div with the class 'todo-list'
-            $(".chat-body").html("");
+            $("#chat-body").html("");
             for (var i = 0; i < keys.length; i++) {
-              $(".chat-body").append(`
-                  <div class="col-sm-2">
-                    <input class="message" data-id="${keys[i]}">
-                  </div>
+              $("#chat-body").append(`
                   <div class="col-sm-10">
                     ${snapshotValue[keys[i]]}
                   </div>

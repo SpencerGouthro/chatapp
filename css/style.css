@@ -1,6 +1,7 @@
+
 body {
     overflow-x: hidden;
-}
+} 
 
 .sidebar-wrapper {
 	background: #872C3C;
@@ -53,8 +54,8 @@ html,body,.container {
   padding:20px;
   background: #872C3C;
   bottom:40px;
-  left:0;
-  right:0;
+  left:0px;
+  right:0px;
   position: absolute;
 }
 
@@ -105,13 +106,13 @@ a:active {
 }
 
 .message { 
-    padding: 20px 20px 20px 0px ;
-}
-
-#btn-login { 
-    color: black;
+    padding: 20px 20px 20px 0px;
 }
 
 .chat-message {  
     border: 1px solid white;
+}
+
+#btn-login { 
+    color: black;
 }
