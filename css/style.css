@@ -56,10 +56,16 @@ html,body,.container {
 
 #chat-body { 
     background-color: #FFF7F9;
+    display: block;
 }
 
 .message { 
     padding: 20px 20px 20px 0px;
+}
+
+.messages {
+    padding: 0px 15px 100px 15px;
+    font-size: 1.5em;
 }
 
 .chat-message {  
@@ -69,7 +75,7 @@ html,body,.container {
 #chat-footer {
   padding:20px;
   background: #872C3C;
-  bottom:40px;
+  bottom:0px;
   left:0px;
   right:0px;
   position: absolute;
@@ -78,7 +84,7 @@ html,body,.container {
 #chat-entertexthere {
   width: 100%;
 } 
-
+/*
 #page-footer{ 
   background: #CC425B; 
   position:absolute; 
@@ -88,7 +94,7 @@ html,body,.container {
   text-align: center;
   padding: 5px;
   height:40px;
-}
+} */
 
 /* unvisited link */
 .game_description a:link {

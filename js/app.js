@@ -88,7 +88,7 @@ $(document).ready(function() {
             $("#chat-body").html("");
             for (var i = 0; i < keys.length; i++) {
               $("#chat-body").append(`
-                  <div class="col-sm-10">
+                  <div class="col-sm-10 messages">
                     ${snapshotValue[keys[i]]}
                   </div>
               `);
