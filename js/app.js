@@ -75,7 +75,7 @@ $(document).ready(function() {
 
           var snapshotValue = snapshot.val();
           if (snapshotValue == undefined || snapshotValue == null) {
-            $(".chat-messages").html(`
+            $(".chat-body").html(`
                  <div class="col-sm-7">
                     <p class="message">No messages yet.</p>
                   </div>
@@ -87,7 +87,7 @@ $(document).ready(function() {
             // populate the div with the class 'todo-list'
             $(".chat-messages").html("");
             for (var i = 0; i < keys.length; i++) {
-              $(".chat-messages").append(`
+              $(".chat-body").append(`
                   <div class="col-sm-2">
                     <input class="message" data-id="${keys[i]}">
                   </div>
@@ -96,7 +96,7 @@ $(document).ready(function() {
                   </div>
               `);
             }
-                        console.log(keys)
+            
                   /*
             // complete a to-do, listens on the checkbox
             $(".todo-done").click(function() {

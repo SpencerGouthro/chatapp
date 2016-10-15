@@ -58,7 +58,7 @@ html,body,.container {
   position: absolute;
 }
 
-#chat-messages input {
+#chat-messages {
   width: 100%;
 } 
 
@@ -109,5 +109,9 @@ a:active {
 }
 
 #btn-login { 
-color: black;
+    color: black;
+}
+
+.chat-message {  
+    border: 1px solid white;
 }
