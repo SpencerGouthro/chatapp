@@ -126,11 +126,11 @@ $(document).ready(function() {
     var messageRef = database.ref('/messages/'+loggedUser.id);
 
     // make sure the new todo isn't blank
-    if ($("#chat-messages").val() != "") {
+    if ($("#chat-entertexthere").val() != "") {
 
       // add the todo and update the values. finally close the modal
-      messageRef.push($("#chat-messages").val());
-      $("#chat-messages").val("");
+      messageRef.push($("#chat-entertexthere").val());
+      $("#chat-entertexthere").val("");
     }
   });
 }); 
