@@ -85,7 +85,7 @@ $(document).ready(function() {
             var keys = Object.keys(snapshotValue); 
 
             // populate the div with the class 'todo-list'
-            $(".chat-messages").html("");
+            $(".chat-body").html("");
             for (var i = 0; i < keys.length; i++) {
               $(".chat-body").append(`
                   <div class="col-sm-2">
@@ -96,7 +96,7 @@ $(document).ready(function() {
                   </div>
               `);
             }
-            
+
                   /*
             // complete a to-do, listens on the checkbox
             $(".todo-done").click(function() {

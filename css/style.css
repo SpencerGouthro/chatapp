@@ -38,7 +38,7 @@ html,body,.container {
   background: #CC425B; 
 }
 
-#chat-footer{ 
+#page-footer{ 
   background: #CC425B; 
   position:absolute; 
   bottom:0; 
@@ -49,7 +49,7 @@ html,body,.container {
   height:40px;
 }
 
-#chat-msg {
+#chat-footer {
   padding:20px;
   background: #872C3C;
   bottom:40px;
