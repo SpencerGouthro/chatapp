@@ -19,15 +19,15 @@ html,body,.container {
 }
 
 .row .no-float {
-  display: table-cell;
-  float: none;
+    display: table-cell;
+    float: none;
 }
 
 #chat-header{ 
-  background: #CC425B; 
+    background: #CC425B; 
 }
 
-#game_title { 
+.game_title { 
     color: white; 
     padding: 15px;
     font-size: 30px;
@@ -39,46 +39,75 @@ html,body,.container {
 }
 
 .sidebar-wrapper {
-  background: #872C3C;
-  color: white;
-  padding: 30px;
-  font-size: 20px;
+    background: #872C3C;
+    color: white;
+    padding: 30px;
+    font-size: 20px;
 }
 
 .sidebar-wrapper li { 
-  list-style-type: none; 
+    list-style-type: none; 
 }
 
 .sidebar-nav a { 
     color: white; 
-    font-size: 20px;
+    font-size: 25px;
 }
 
 #chat-body { 
-    background-color: #FFF7F9;
     display: block;
+    margin-bottom: 75px;
 }
 
-.message { 
+.messages-logged-out p { 
     padding: 20px 20px 20px 0px;
 }
 
-.messages {
-    padding: 0px 15px 100px 15px;
-    font-size: 1.5em;
+.messages-logged-out {
+    padding: 0px 15px 10px 15px;
+    font-size: 1.25em;
+    border: 2px solid white;
+    background-color: #FFF7F9;
 }
 
-.chat-message {  
-    border: 1px solid white;
+.message-item {
+    padding: 0px 15px 10px 15px;
+    font-size: 1.25em;
+    border: 2px solid white;
+    background-color: #FFF7F9;
+}
+
+#news-headline { 
+  color: white;
+  background-color: black;
+  font-size: 1.25em;
+  text-align: center;
+}
+
+#news { 
+  font-size: 1.5em;
+  background-color: #F5F4F5; 
+}
+
+.game-news {
+  border: 1px dotted black;
+  margin: 10px;
+  text-align: center;
+}
+
+.news-images {
+  width: 532px;
+  height: 282px;
+  padding: 10px;
 }
 
 #chat-footer {
   padding:20px;
-  background: #872C3C;
+  background-color: #CC425B;
   bottom:0px;
-  left:0px;
   right:0px;
-  position: absolute;
+  position: fixed;
+  width: 100%
 }
 
 #chat-entertexthere {
@@ -113,11 +142,17 @@ html,body,.container {
     color: #A9F5F5;
 }
 
-.profile-picture { 
-    width: 130px; 
-    padding: 15px;
+.fb-login { 
+    color: black;
+    margin:5px;
 }
 
-#btn-login { 
+.gh-login { 
     color: black;
+    margin:5px;
+}
+
+.btn-logout { 
+    color: black;
+    margin:5px;
 }

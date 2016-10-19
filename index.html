@@ -15,8 +15,6 @@
     http://codepen.io/UIT/pen/VKyPBw/ 
     https://firebase.google.com/docs/auth/web/github-auth
     
-    Things to get done:
-    Create channels, News part, Sign in with gitub, Logout Button, 
 -->
 
     <body>
@@ -24,51 +22,81 @@
         <!-- CODE YOUR HTML APP HERE! -->
         <div class="container">
             <div class="row main_row">
-                <div class="col-sm-3 sidebar-wrapper no-float">
-                    <p>Welcome to Spencer's Gaming Chat Site! <br><br> Pick a game title to enter the game's chat room.</p>
+                <div class="col-xs-3 sidebar-wrapper no-float" data-toggle="expand">
+                    <p>Welcome to Legit Elite Gaming News and Messenger. <br><br> Click a game title to go to the game's chat room and discuss the latest news with friends!</p>
                         <ul class="sidebar-nav">
-                        <br><li> <a href="">Call of Duty</a>   </li><br>
-                            <li> <a href="">Grand Theft Auto</a>  </li><br>
-                            <li> <a href="">Minecraft</a>  </li><br>
-                            <li> <a href="">Rocket League</a>  </li>
-                        </ul> 
-                        <div id="login" class="col-sm-8">
-                            <button id="btn-login">Login through facebook</button>
-                        </div> 
-                </div>
-                <div class="col-sm-9 no-float">
-                    <div id="chat-header" class="row">
-                        <div class="col-sm-6">
-                            <h1 id="game_title">This is the chat room title.</h1>
-                        </div>
+                        <br>
+                            <li> <a href="">Grand Theft Auto V</a></li><br>
+                            <li> <a href="">Fallout 4</a></li><br>
+                            <li> <a href="">Red Dead</a></li><br>
 
+                        </ul> <br>
+                        <div class="logged-out-screen">
+                            <div class="col-sm-12">
+                                <button class="btn btn-default btn-block fb-login">Login through Facebook</button>
+                            </div>  
+                             <div class="col-sm-12">
+                                <button class="btn btn-default btn-block gh-login">Login through Github</button>
+                            </div> 
+                        </div>
+                        
+                         <div class="col-sm-12 logged-in-screen" style="display:none">
+                            <button class="btn btn-default btn-block btn-logout">Logout of account</button>
+                        </div>
+                </div>
+
+                <div class="col-sm-12 no-float">
+                    <div id="chat-header" class="row">
+                        <div class="col-sm-6 game_title">
+                            <h1>This is the chat room title.</h1>
+                            <!--    <button type="button" id="btn-expand" class="btn btn-default">
+                                    Expand/Collapse
+                                    </button> -->
+                        </div>
                    
                         <div class="col-sm-6 game_description">
                             <p> Description of game. <br> <br>
                                 Here's some useful links: 
-                                <a href="https://www.wikipedia.org">Wikipedia Page</a>, 
-                                <a href="https://www.youtube.com">Trailer</a>,
-                                <a href="https://www.google.ca">Official Game Site</a>.
+                                <a href="https://www.wikipedia.org" target="_blank">Wikipedia Page</a>, 
+                                <a href="https://www.youtube.com" target="_blank">Trailer</a>,
+                                <a href="https://www.google.ca" target="_blank">Official Game Site</a>.
                             </p>   
                         </div>
                     </div>
 
-                    <div id="chat-body">
-                        <div class="row chat-message">
-                            <div class="col-sm-2">
-                                <img class="profile-picture" src="profilepic.jpg">
+                    <div id="chat-body" class="row">
+                        <div id="messages-window" class="col-lg-7">
+                            <div class="messages-logged-out">
+                                <p>Login to view messages.</p>
                             </div>
-                            <div class="col-sm-10 messages">
-                                <p class="message">Login to view messages.</p>
+                            <div class="messages-logged-in clearfix" style="display:none">
+                                <p> </p>
                             </div>
                         </div>
+
+                        <div id="news" class="col-sm-5 hidden-md hidden-sm hidden-xs">
+                            <p id="news-headline">LATEST NEWS</p>
+                                <div class="game-news">
+                                    <p><img class="img-responsive news-images" src="bikers.jpg" alt="Biker Update"><a href="http://www.rockstargames.com/newswire/article/52670/gta-online-bikers-now-available" target="_blank"> GTA Online Biker update released on Oct. 4th</a></p>
+                                </div>
+                                <div class="game-news">
+                                    <p><img class="img-responsive news-images" src="rdr2.jpg" alt="Red Dead Redemption 2"><a href="http://www.rockstargames.com/newswire/article/52677/red-dead-redemption-2-coming-fall-2017-watch-the-trailer" target="_blank"> Red Dead Redemption 2 announced, trailer release on Oct. 20th</a></p>
+                                </div>
+                                <div class="game-news">
+                                    <p><img class="img-responsive news-images" src="fallout4mods.jpg" alt="Fallout 4 Mods" ><a href="https://bethesda.net/#en/events/game/mods-and-4k-coming-to-ps4-for-skyrim-and-fallout4/2016/10/04/221" target="_blank"> Fallout 4 Mods coming to PS4 after Skyrim Remastered release on Oct. 28th</a></p>
+                                </div>
+                        </div>
+
                     </div>
 
+
+
                     <div id="chat-footer" class="row">
-                        <div class="col-sm-9">
-                             <input id="chat-entertexthere" type="text"/>
+                    <div class="col-xs-3"></div>
+                        <div class="col-xs-8">
+                             <input id="chat-entertexthere" type="text" placeholder="Enter your chat message here." />
                         </div>
-                        <div id="send-btn" class="col-sm-3">
+                        <div id="send-btn" class="col-xs-1">
                             <button>Send</button>
                         </div>
                     </div>
@@ -80,7 +108,26 @@
             </div>
         </div>
 
-
+        <div id="login-modal" class="modal fade" tabindex="-1" role="dialog">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">You must login to participate in chat.</h4>
+              </div>
+              <div class="modal-body">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <button class="btn btn-default btn-block fb-login">Login through Facebook</button>
+                    </div>  
+                     <div class="col-sm-12">
+                        <button class="btn btn-default btn-block gh-login">Login through Github</button>
+                    </div> 
+                </div>
+              </div>
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
 
         <!-- FIREBASE -->
         <script src='https://www.gstatic.com/firebasejs/3.1.0/firebase.js'></script>
