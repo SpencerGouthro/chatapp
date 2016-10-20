@@ -41,32 +41,34 @@
                                     <button class="btn btn-default btn-block btn-logout">Logout of account</button>
                                 </div>
                             </div>
-
-                        <p>Click a game title to go to the game's chat room and discuss the latest news with friends!</p>
-                        <ul class="sidebar-nav">
-                            <li> <a href="#" id="channel-gta" class="btn-channel" data-channel-id="1">Grand Theft Auto V</a></li><br>
-                            <li> <a href="#" id="channel-fallout" class="btn-channel" data-channel-id="2">Fallout 4</a></li><br>
-                            <li> <a href="#" id="channel-rdr" class="btn-channel" data-channel-id="3">Red Dead</a></li><br>
-                        </ul> 
+                        <div id="sidebar-channel-names">
+                            <p>Click a game title to go to the game's chat room and discuss the latest news with friends!</p>
+                            <ul class="sidebar-nav" >
+                                <li> <a href="#" id="channel-gta" class="btn-channel" data-channel-id="1">Grand Theft Auto V</a></li><br>
+                                <li> <a href="#" id="channel-fallout" class="btn-channel" data-channel-id="2">Fallout 4</a></li><br>
+                                <li> <a href="#" id="channel-rdr" class="btn-channel" data-channel-id="3">Red Dead</a></li><br>
+                            </ul> 
+                        </div>
                     </div>
 
                 </div>
 
                 <div class="col-sm-12 no-float">
                     <div id="chat-header" class="row">
-                        <div class="col-sm-6 game_title">
-                            <h1>Channel: Grand Theft Auto V</h1>
+                        <div class="col-sm-4 game_title">
+                            <h4>The channel you are currently in is</h4>
+                            <h1 id="game-title">Grand Theft Auto V</h1>
                                 <button class="btn btn-default btn-sidebar">
                                 Expand/Collapse sidebar
                                 </button> 
                         </div>
                    
-                        <div class="col-sm-6 game_description">
-                            <p> Description of game. <br> <br>
+                        <div class="col-sm-8 game_description">
+                            <p class="hidden-xs"> <span id="game-desc">Grand Theft Auto V is a third and first person open world action-adventure game developed by Rockstar Games. It is available for PS4, Xbox One, and PC. It is set within 'Los Santos' which is a fictional representation based on Los Angles, California. The single-player follows three criminals as they live their life robbing banks. It also comes with a massively popular Online counterpart. </span> <br> <br>
                                 Here's some useful links: 
-                                <a href="https://www.wikipedia.org" target="_blank">Wikipedia Page</a>, 
-                                <a href="https://www.youtube.com" target="_blank">Trailer</a>,
-                                <a href="https://www.google.ca" target="_blank">Official Game Site</a>.
+                                <a href="#" id="wiki-link" target="_blank">Wikipedia Page</a>, 
+                                <a href="#"" id="trailer-link" target="_blank">Trailer</a>,
+                                <a href="#" id="gamesite-link" target="_blank">Official Game Site</a>.
                             </p>   
                         </div>
                     </div>
@@ -99,7 +101,7 @@
 
 
                     <div id="chat-footer" class="row">
-                    <div class="col-xs-3"></div>
+                    <div class="col-sm-3"></div>
                         <div class="col-xs-8">
                              <input id="chat-entertexthere" type="text" placeholder="Enter your chat message here." />
                         </div>

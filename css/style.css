@@ -38,10 +38,14 @@ html,body,.container {
     font-size: 30px;
 }
 
+#game-title {
+    font-weight: bold;
+}
+
 .game_description p { 
     color: white; 
     padding: 15px;
-    font-size: 1.25em;
+    font-size: 1.15em;
 }
 
 .sidebar-wrapper {
@@ -62,6 +66,10 @@ html,body,.container {
 
 .sidebar-buttons {
     margin-bottom: 130px;
+}
+
+#sidebar-channel-names {
+    display: none;
 }
 
 #chat-body { 
