@@ -1,3 +1,8 @@
+/*
+
+
+
+*/
 body {
     overflow-x: hidden;
 } 
@@ -36,6 +41,7 @@ html,body,.container {
 .game_description p { 
     color: white; 
     padding: 15px;
+    font-size: 1.25em;
 }
 
 .sidebar-wrapper {
@@ -52,6 +58,10 @@ html,body,.container {
 .sidebar-nav a { 
     color: white; 
     font-size: 25px;
+}
+
+.sidebar-buttons {
+    margin-bottom: 130px;
 }
 
 #chat-body { 
@@ -71,10 +81,25 @@ html,body,.container {
 }
 
 .message-item {
-    padding: 0px 15px 10px 15px;
+    padding: 10px 15px 10px 15px;
     font-size: 1.25em;
-    border: 2px solid white;
     background-color: #FFF7F9;
+}
+
+.each-message {
+    background-color: #FFF7F9;
+    padding: 0px 15px 10px 15px;
+    border: 2px solid white;
+}
+
+.profile-pic {
+  padding: 10px;
+  max-height:100px;
+  max-width:100px;
+}
+
+.username {
+  font-weight: bold;
 }
 
 #news-headline { 

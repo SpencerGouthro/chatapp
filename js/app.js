@@ -36,8 +36,7 @@ $(document).ready(function() {
       $(".logged-in-screen").show();         
       $("#login-modal").modal("hide");
       $(".messages-logged-out").hide();
-      $(".messages-logged-in").show();
- 
+      $(".messages-logged-in").show(); 
 
       // check for your profile
       profileRef.once("value").then(function(snapshot) {
@@ -66,7 +65,7 @@ $(document).ready(function() {
               loggedUser = snapshotValue[keys[i]];
               loggedUser.id = keys[i];
               found = true;
-            }
+            } 
           }      
 
           // profile is not found, add a new one
@@ -75,32 +74,11 @@ $(document).ready(function() {
           }
         } 
 
-        // listen for todos and update on the fly
-        var messageRef = database.ref('/messages/'+loggedUser.id);
-        messageRef.on('value', function(snapshot) {
+        load_channel_messages(loggedUser.id, database);
 
-          var snapshotValue = snapshot.val();
-          if (snapshotValue == undefined || snapshotValue == null) {
-            $(".messages-logged-in").html(`
-
-            `);
-          }
-          else {
-            var keys = Object.keys(snapshotValue); 
-
-            // populate the div with the class 'todo-list'
-            $(".messages-logged-in").html("");
-            for (var i = 0; i < keys.length; i++) {
-              $(".messages-logged-in").append(`
-                  <div class="col-sm-12 message-item">
-                    ${snapshotValue[keys[i]]}
-                  </div>
-              `);
-            }
-          }
-        }); 
 
       });
+
 
     }, function(error) {
       console.log("Oops! There was an error");
@@ -156,31 +134,9 @@ $(document).ready(function() {
           }
         } 
 
-        // listen for todos and update on the fly
-        var messageRef = database.ref('/messages/'+loggedUser.id);
-        messageRef.on('value', function(snapshot) {
 
-          var snapshotValue = snapshot.val();
-          if (snapshotValue == undefined || snapshotValue == null) {
-            $(".messages-logged-in").html(`
-
-            `);
-          }
-          else {
-            var keys = Object.keys(snapshotValue); 
-
-            // populate the div with the class 'todo-list'
-            $(".messages-logged-in").html("");
-            for (var i = 0; i < keys.length; i++) {
-              $(".messages-logged-in").append(`
-                  <div class="col-sm-12 message-item">
-                    ${snapshotValue[keys[i]]}
-                  </div>
-              `);
-              console.log(snapshotValue[keys[i]]);
-            }
-          }
-        }); 
+        load_channel_messages(loggedUser.id, database);
+ 
 
       });
 
@@ -196,19 +152,26 @@ $(document).ready(function() {
 
     if (Object.keys(loggedUser).length > 0) { 
 
-      var messageRef = database.ref('/messages/'+loggedUser.id);
+      var current_channel = $(this).data('currentChannel');
+
+      var messageRef = database.ref('/messages/').child(loggedUser.id).child(current_channel);
 
       // make sure the new message isn't blank
       if ($("#chat-entertexthere").val() != "") {
 
         // add the message and update the values. finally close the modal
+        
         //messageRef.push($("#chat-entertexthere").val());
+
         messageRef.push(
           {
-            'message': $("#chat-entertexthere").val(),
-            'user_id': loggedUser.id
-        }
+            "message": $("#chat-entertexthere").val(),
+            "photo_url": loggedUser.photo_url,
+            "name": loggedUser.name
+          }
         );
+
+
         $("#chat-entertexthere").val("");
       }
     }
@@ -219,32 +182,25 @@ $(document).ready(function() {
   });
 
 
-/*
-  $("#btn-expand").click(function() {
+  $(".btn-channel").click(function() { 
+    var channelID = $(this).data('channelId'); // declares the variable by getting the channel id data attribute
+    $("#send-btn").data("currentChannel", channelID); // Adds the data attribute and value to the send button
+    load_channel_messages(loggedUser.id, database);
 
-    // check the state of the sidebar's data-toggle
-    if ($(".sidebar-wrapper").data('toggle') == "expand") {
 
-      // it's expanded, collapse it
-      $(".sidebar-wrapper").data('toggle', 'collapse');
-      $(".sidebar-wrapper").animate({
-        width: "-=200px"
-      }, 500, function() {
-        
-      });
-    }
-    else {
 
-      // it's collapsed, expand it
-      $(".sidebar-wrapper").data('toggle', 'expand');
-      $(".sidebar-wrapper").animate({
-        width: "+=200px"
-      }, 500, function() {
-        
-      });
-    }
   });
-*/
+    
+
+
+
+  $(".btn-sidebar").click(function() {
+
+    var sidebar = $(".sidebar-wrapper");
+    sidebar.toggle();
+
+  });
+
 
 
   $(".btn-logout").click(function() {
@@ -269,12 +225,55 @@ $(document).ready(function() {
 function addNewUser(result, ref) {
   var user = {
     name: result.user.displayName,
-    email: result.user.email
+    email: result.user.email,
+    photo_url: result.user.photoURL
   };
 
   var newUser = ref.push(user);
   user.id = newUser.key;
   return user;
+}
+
+function load_channel_messages(logged_user_id, database){
+
+
+        var current_channel = $("#send-btn").data('currentChannel');
+
+        // listen for todos and update on the fly
+        var messageRef = database.ref('/messages/').child(logged_user_id).child(current_channel);
+
+        messageRef.on('value', function(snapshot) {
+
+          var snapshotValue = snapshot.val();
+          if (snapshotValue == undefined || snapshotValue == null) {
+            $(".messages-logged-in").html(`
+
+            `);
+          }
+          else {
+            var keys = Object.keys(snapshotValue); 
+
+            // populate the div with the class 'todo-list'
+            $(".messages-logged-in").html("");
+            for (var i = 0; i < keys.length; i++) {
+
+              $(".messages-logged-in").append(`
+                <div class="row each-message">
+                  <div class="col-sm-3">
+                    <img class="responsive-img profile-pic" src="${snapshotValue[keys[i]]['photo_url']}"/>
+                  </div>
+                  <div class="username">
+                    ${snapshotValue[keys[i]]['name']}
+                  </div>
+                  <div class="col-sm-9 message-item">
+                    ${snapshotValue[keys[i]]['message']}
+                  </div>
+                </div>  
+              `);
+            }
+          }
+        }); 
+
 }
 
 
