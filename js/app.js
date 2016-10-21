@@ -59,7 +59,7 @@ $(document).ready(function() {
 
       var current_channel = $(this).data('currentChannel');
 
-      var messageRef = database.ref('/messages/').child(loggedUser.id).child(current_channel);
+      var messageRef = database.ref('/messages/').child(current_channel);
 
       // make sure the new message isn't blank
       if ($("#chat-entertexthere").val() != "") {
@@ -176,7 +176,7 @@ function load_channel_messages(logged_user_id, database){
   var current_channel = $("#send-btn").data('currentChannel');
 
   // listen for todos and update on the fly
-  var messageRef = database.ref('/messages/').child(logged_user_id).child(current_channel);
+  var messageRef = database.ref('/messages/').child(current_channel);
 
   messageRef.on('value', function(snapshot) {
 
