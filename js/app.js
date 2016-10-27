@@ -90,7 +90,7 @@ $(document).ready(function() {
   var gameInfo = {
     '1': {
           'name': 'Grand Theft Auto V',
-          'description': "Grand Theft Auto V is a third and first person open world action-adventure game developed by Rockstar Games. It is available for PS4, Xbox One, and PC. It is set within \'Los Santos\' which is a fictional representation based on Los Angles, California. The single-player follows three criminals as they live their life robbing banks. It also comes with a massively popular Online counterpart.",
+          'description': "Grand Theft Auto V is a third and first person open world action-adventure game developed by Rockstar Games. It is available for PS4, Xbox One, and PC. It is set within \'Los Santos\' which is a fictional representation of Los Angles, California. The single-player follows three criminals as they live their life robbing banks. It also comes with a massively popular Online counterpart.",
           'links': {
             'wikipedia': 'https://en.wikipedia.org/wiki/Grand_Theft_Auto_V',
             'official': 'http://www.rockstargames.com/V/',
@@ -127,8 +127,8 @@ $(document).ready(function() {
     $("#game-title").text(gameInfo[channelID]['name']);
     $("#game-desc").text(gameInfo[channelID]['description']);
     $("#wiki-link").attr('href', gameInfo[channelID]['links']['wikipedia']);
-    $("#trailer-link").attr('href', gameInfo[channelID]['links']['official']);
-    $("#gamesite-link").attr('href', gameInfo[channelID]['links']['trailer']);
+    $("#trailer-link").attr('href', gameInfo[channelID]['links']['trailer']);
+    $("#gamesite-link").attr('href', gameInfo[channelID]['links']['official']);
 
 });
   
@@ -260,6 +260,20 @@ function sign_in(profileRef, result, database){
 
 }
 
+  //Check to see if the window is top if not then display button
+  $(window).scroll(function(){
+    if ($(this).scrollTop() > 100) {
+      $('.scrollToTop').fadeIn();
+    } else {
+      $('.scrollToTop').fadeOut();
+    }
+  });
+  
+  //Click event to scroll to top
+  $('.scrollToTop').click(function(){
+    $('html, body').animate({scrollTop : 0},800);
+    return false;
+  });
 
 }); 
 

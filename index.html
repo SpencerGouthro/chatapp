@@ -14,7 +14,7 @@
 
 
    
-    <body>
+       <body>
 
         <!-- CODE YOUR HTML APP HERE! -->
         <div class="container">
@@ -22,22 +22,21 @@
                 <div class="col-xs-3 sidebar-wrapper no-float" data-toggle="expand">
 
                     <div id="sidebar-content">
-                        <p>Welcome to Legit Elite Gaming News and Messenger.</p> <br>
-
-                            <div class="sidebar-buttons">
-                                <div class="logged-out-screen">
-                                    <div class="col-sm-12">
-                                        <button class="btn btn-default btn-block fb-login">Login through Facebook</button>
-                                    </div>  
-                                     <div class="col-sm-12">
-                                        <button class="btn btn-default btn-block gh-login">Login through Github</button>
-                                    </div> 
-                                </div>
-                            
-                                 <div class="col-sm-12 logged-in-screen" style="display:none">
-                                    <button class="btn btn-default btn-block btn-logout">Logout of account</button>
-                                </div>
+                        <img src="chatapplogo.png" class="img-responsive" id="logo"> 
+                        <div class="sidebar-buttons">
+                            <div class="logged-out-screen">
+                                <div class="col-sm-12">
+                                    <button class="btn btn-default btn-block fb-login">Login through Facebook</button>
+                                </div>  
+                                 <div class="col-sm-12">
+                                    <button class="btn btn-default btn-block gh-login">Login through Github</button>
+                                </div> 
                             </div>
+                        
+                             <div class="col-sm-12 logged-in-screen" style="display:none">
+                                <button class="btn btn-default btn-block btn-logout">Logout of account</button>
+                            </div>
+                        </div>
                         <div id="sidebar-channel-names">
                             <p>Click a game title to go to the game's chat room and discuss the latest news with friends!</p>
                             <ul class="sidebar-nav" >
@@ -61,11 +60,11 @@
                         </div>
                    
                         <div class="col-sm-8 game_description">
-                            <p class="hidden-xs"> <span id="game-desc">Grand Theft Auto V is a third and first person open world action-adventure game developed by Rockstar Games. It is available for PS4, Xbox One, and PC. It is set within 'Los Santos' which is a fictional representation based on Los Angles, California. The single-player follows three criminals as they live their life robbing banks. It also comes with a massively popular Online counterpart. </span> <br> <br>
+                            <p class="hidden-xs"> <span id="game-desc">Grand Theft Auto V is a third and first person open world action-adventure game developed by Rockstar Games. It is available for PS4, Xbox One, and PC. It is set within 'Los Santos' which is a fictional representation of Los Angles, California. The single-player follows three criminals as they live their life robbing banks. It also comes with a massively popular Online counterpart. </span> <br> <br>
                                 Here's some useful links: 
-                                <a href="#" id="wiki-link" target="_blank">Wikipedia Page</a>, 
-                                <a href="#"" id="trailer-link" target="_blank">Trailer</a>,
-                                <a href="#" id="gamesite-link" target="_blank">Official Game Site</a>.
+                                <a href="https://en.wikipedia.org/wiki/Grand_Theft_Auto_V" id="wiki-link" target="_blank">Wikipedia Page</a>, 
+                                <a href="https://www.youtube.com/watch?v=QkkoHAzjnUs" id="trailer-link" target="_blank">Trailer</a>,
+                                <a href="http://www.rockstargames.com/V/" id="gamesite-link" target="_blank">Official Game Site</a>.
                             </p>   
                         </div>
                     </div>
@@ -98,12 +97,14 @@
 
 
                     <div id="chat-footer" class="row">
-                    <div class="col-sm-3"></div>
-                        <div class="col-xs-8">
+                        <div class="col-xs-3">  
+                           <button class="scrollToTop btn btn-default btn-block">Scroll To Top</button>
+                        </div>
+                        <div class="col-xs-7">
                              <input id="chat-entertexthere" type="text" placeholder="Enter your chat message here." />
                         </div>
-                        <div class="col-xs-1">
-                            <button id="send-btn" data-current-channel="1">Send</button>
+                        <div class="col-xs-2">
+                            <button id="send-btn" class="btn btn-default btn-block" data-current-channel="1">Send</button>
                         </div>
                     </div>
                 </div>
