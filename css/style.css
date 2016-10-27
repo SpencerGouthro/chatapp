@@ -47,21 +47,29 @@ html,body,.container {
 .sidebar-wrapper {
     background: #872C3C;
     color: white;
-    padding: 30px;
-    font-size: 20px;
+    padding: 10px;
+    font-size: 1.4em;
 }
 
 .sidebar-wrapper li { 
     list-style-type: none; 
+    margin: auto;
 }
 
 .sidebar-nav a { 
     color: white; 
-    font-size: 25px;
+}
+
+
+#logo {
+    padding: 5px;
+    max-width:270px;
+    max-height:270px;
+    margin: auto;
 }
 
 .sidebar-buttons {
-    margin-bottom: 130px;
+    margin-bottom: 10px;
 }
 
 #sidebar-channel-names {
