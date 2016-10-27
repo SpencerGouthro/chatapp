@@ -1,8 +1,4 @@
-/*
 
-
-
-*/
 body {
     overflow-x: hidden;
 } 
@@ -101,9 +97,9 @@ html,body,.container {
 }
 
 .profile-pic {
-  padding: 10px;
-  max-height:100px;
-  max-width:100px;
+  padding: 5px;
+  max-height:70px;
+  max-width:70px;
 }
 
 .username {
@@ -146,17 +142,6 @@ html,body,.container {
 #chat-entertexthere {
   width: 100%;
 } 
-/*
-#page-footer{ 
-  background: #CC425B; 
-  position:absolute; 
-  bottom:0; 
-  width:100%;  
-  color: white; 
-  text-align: center;
-  padding: 5px;
-  height:40px;
-} */
 
 /* unvisited link */
 .game_description a:link {
