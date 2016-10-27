@@ -89,36 +89,34 @@ $(document).ready(function() {
 
   var gameInfo = {
     '1': {
-      'name': 'Grand Theft Auto V',
-      'description': "Grand Theft Auto V is a third and first person open world action-adventure game developed by Rockstar Games. It is available for PS4, Xbox One, and PC. It is set within \'Los Santos\' which is a fictional representation based on Los Angles, California. The single-player follows three criminals as they live their life robbing banks. It also comes with a massively popular Online counterpart.",
-      'links': {
-        'wikipedia': 'https://en.wikipedia.org/wiki/Grand_Theft_Auto_V',
-        'official': 'http://www.rockstargames.com/V/',
-        'trailer': 'https://www.youtube.com/watch?v=QkkoHAzjnUs'
-        }    
-      },
+          'name': 'Grand Theft Auto V',
+          'description': "Grand Theft Auto V is a third and first person open world action-adventure game developed by Rockstar Games. It is available for PS4, Xbox One, and PC. It is set within \'Los Santos\' which is a fictional representation based on Los Angles, California. The single-player follows three criminals as they live their life robbing banks. It also comes with a massively popular Online counterpart.",
+          'links': {
+            'wikipedia': 'https://en.wikipedia.org/wiki/Grand_Theft_Auto_V',
+            'official': 'http://www.rockstargames.com/V/',
+            'trailer': 'https://www.youtube.com/watch?v=QkkoHAzjnUs'
+            },
+          },
 
     '2': {
-      'name': 'Fallout 4',
-      'description': "Fallout 4 is a third and first person action role-playing video game developed by Bethesda Softworks. It is available for PS4, Xbox One, and PC. The game is set within an open world post-apocalyptic environment that encompasses the city of Boston and the surrounding Massachusetts region known as \'The Commonwealth\'. The main story takes place in the year 2287, 210 years after \'The Great War\' that caused catastrophic nuclear devastation across the United States.",
-      'links': {
-        'wikipedia': 'https://en.wikipedia.org/wiki/Fallout_4',
-        'official': 'https://www.fallout4.com/',
-        'trailer': 'https://www.youtube.com/watch?v=X5aJfebzkrM'
-        }
-      },
+          'name': 'Fallout 4',
+          'description': "Fallout 4 is a third and first person action role-playing video game developed by Bethesda Softworks. It is available for PS4, Xbox One, and PC. The game is set within an open world post-apocalyptic environment that encompasses the city of Boston and the surrounding Massachusetts region known as \'The Commonwealth\'. The main story takes place in the year 2287, 210 years after \'The Great War\' that caused catastrophic nuclear devastation across the United States.",
+          'links': {
+            'wikipedia': 'https://en.wikipedia.org/wiki/Fallout_4',
+            'official': 'https://www.fallout4.com/',
+            'trailer': 'https://www.youtube.com/watch?v=X5aJfebzkrM'
+            }
+          },
 
     '3': {
-      'name': 'Red Dead Redemption',
-      'description': "Red Dead Redemption 2 is a third person open world western action-adventure video game developed by Rockstar Games. Red Dead Redemption 2 is an upcoming sequel to Red Dead Redemption 1, being released in Fall of 2017 and will be available for PS4 and Xbox One. Red Dead Redemption 1, which is available for PS3 and Xbox 360, is set during the decline of the American Frontier in the year 1911 and takes place on the border between Southern United States and Northern Mexico.",
-      'links': {
-        'wikipedia': 'https://en.wikipedia.org/wiki/Red_Dead_Redemption_2',
-        'official': 'http://www.rockstargames.com/reddeadredemption/',
-        'trailer': 'https://www.youtube.com/watch?v=gmA6MrX81z4'
-        }
-    
-      }
-
+          'name': 'Red Dead Redemption',
+          'description': "Red Dead Redemption 2 is a third person open world western action-adventure video game developed by Rockstar Games. Red Dead Redemption 2 is an upcoming sequel to Red Dead Redemption 1, being released in Fall of 2017 and will be available for PS4 and Xbox One. Red Dead Redemption 1, which is available for PS3 and Xbox 360, is set during the decline of the American Frontier in the year 1911 and takes place on the border between Southern United States and Northern Mexico.",
+          'links': {
+            'wikipedia': 'https://en.wikipedia.org/wiki/Red_Dead_Redemption_2',
+            'official': 'http://www.rockstargames.com/reddeadredemption/',
+            'trailer': 'https://www.youtube.com/watch?v=gmA6MrX81z4'
+            }
+          }
   }
 
   $(".btn-channel").click(function() { 
