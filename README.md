@@ -13,3 +13,5 @@
 3. Open a browser (we suggest Chrome!) and navigate to `http://localhost:8000`
 
 **Note:** These instructions only cover Mac installation and deploy. If you are using a Windows machine, you may need to download a web server in order to view the project in a browser.
+
+        You could also go to https://spencergouthro.github.io/chatapp/ 
