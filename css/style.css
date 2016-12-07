@@ -106,8 +106,8 @@ html,body,.container {
 
 .profile-pic {
   padding: 5px;
-  max-height:70px;
-  max-width:70px;
+  max-height:65px;
+  max-width:65px;
 }
 
 .username {
@@ -139,7 +139,7 @@ html,body,.container {
 }
 
 #chat-footer {
-  padding:20px;
+  padding:10px;
   background-color: #CC425B;
   bottom:0px;
   right:0px;
@@ -181,4 +181,8 @@ html,body,.container {
 .btn-logout { 
     color: black;
     margin:5px;
+}
+
+.btn-sidebar {
+  margin: 10px;
 }

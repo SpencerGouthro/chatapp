@@ -28,8 +28,6 @@ $(document).ready(function() {
   // event listener for the login button
   $(".fb-login").click(function() {
 
-    // sign in via popup
-    // PRO TIP: remember, .then usually indicates a promise!
     auth.signInWithPopup(facebookProvider).then(function(result) {
       sign_in(profileRef, result, database);
  
@@ -52,45 +50,20 @@ $(document).ready(function() {
   });
 
    
-  // adds message
   $("#send-btn").click(function() {
-
-    if (Object.keys(loggedUser).length > 0) { 
-
-      var current_channel = $(this).data('currentChannel');
-
-      var messageRef = database.ref('/messages/').child(current_channel);
-
-      // make sure the new message isn't blank
-      if ($("#chat-entertexthere").val() != "") {
-
-        // add the message and update the values. finally close the modal
-        
-        //messageRef.push($("#chat-entertexthere").val());
-
-        messageRef.push(
-          {
-            "message": $("#chat-entertexthere").val(),
-            "photo_url": loggedUser.photo_url,
-            "name": loggedUser.name
-          }
-        );
-
-
-        $("#chat-entertexthere").val("");
-      }
-    }
-  else {
-   $("#login-modal").modal();
-  }
-
+    send_message();
   });
+
+  $("#chat-entertexthere").keypress(function(e) {
+    if(e.keyCode == 13) {
+        send_message();
+    }
+});
 
 
   var gameInfo = {
     '1': {
           'name': 'Grand Theft Auto V',
-          'description': "Grand Theft Auto V is a third and first person open world action-adventure game developed by Rockstar Games. It is available for PS4, Xbox One, and PC. It is set within \'Los Santos\' which is a fictional representation of Los Angles, California. The single-player follows three criminals as they live their life robbing banks. It also comes with a massively popular Online counterpart.",
           'links': {
             'wikipedia': 'https://en.wikipedia.org/wiki/Grand_Theft_Auto_V',
             'official': 'http://www.rockstargames.com/V/',
@@ -99,18 +72,16 @@ $(document).ready(function() {
           },
 
     '2': {
-          'name': 'Fallout 4',
-          'description': "Fallout 4 is a third and first person action role-playing video game developed by Bethesda Softworks. It is available for PS4, Xbox One, and PC. The game is set within an open world post-apocalyptic environment that encompasses the city of Boston and the surrounding Massachusetts region known as \'The Commonwealth\'. The main story takes place in the year 2287, 210 years after \'The Great War\' that caused catastrophic nuclear devastation across the United States.",
+          'name': 'Star Wars Battlefront',
           'links': {
-            'wikipedia': 'https://en.wikipedia.org/wiki/Fallout_4',
-            'official': 'https://www.fallout4.com/',
-            'trailer': 'https://www.youtube.com/watch?v=X5aJfebzkrM'
+            'wikipedia': 'https://en.wikipedia.org/wiki/Star_Wars:_Battlefront',
+            'official': 'http://starwars.ea.com/starwars/battlefront',
+            'trailer': 'https://www.youtube.com/watch?v=V2xp-qtUlsQ'
             }
           },
 
     '3': {
           'name': 'Red Dead Redemption',
-          'description': "Red Dead Redemption 2 is a third person open world western action-adventure video game developed by Rockstar Games. Red Dead Redemption 2 is an upcoming sequel to Red Dead Redemption 1, being released in Fall of 2017 and will be available for PS4 and Xbox One. Red Dead Redemption 1, which is available for PS3 and Xbox 360, is set during the decline of the American Frontier in the year 1911 and takes place on the border between Southern United States and Northern Mexico.",
           'links': {
             'wikipedia': 'https://en.wikipedia.org/wiki/Red_Dead_Redemption_2',
             'official': 'http://www.rockstargames.com/reddeadredemption/',
@@ -125,7 +96,6 @@ $(document).ready(function() {
     
     load_channel_messages(loggedUser.id, database);
     $("#game-title").text(gameInfo[channelID]['name']);
-    $("#game-desc").text(gameInfo[channelID]['description']);
     $("#wiki-link").attr('href', gameInfo[channelID]['links']['wikipedia']);
     $("#trailer-link").attr('href', gameInfo[channelID]['links']['trailer']);
     $("#gamesite-link").attr('href', gameInfo[channelID]['links']['official']);
@@ -199,6 +169,9 @@ function load_channel_messages(logged_user_id, database){
             <div class="username">
               ${snapshotValue[keys[i]]['name']}
             </div>
+            <div class="time">
+              ${snapshotValue[keys[i]]['timestamp']}
+            </div>
             <div class="col-sm-9 message-item">
               ${snapshotValue[keys[i]]['message']}
             </div>
@@ -209,6 +182,43 @@ function load_channel_messages(logged_user_id, database){
   }); 
 
 }
+
+
+function send_message() {
+   if (Object.keys(loggedUser).length > 0) { 
+
+      var current_channel = $("#send-btn").data('currentChannel');
+
+      var messageRef = database.ref('/messages/').child(current_channel);
+
+      // make sure the new message isn't blank
+      if ($("#chat-entertexthere").val() != "") {
+
+        // add the message and update the values. finally close the modal
+        
+        //messageRef.push($("#chat-entertexthere").val());
+
+                // Create a new JavaScript Date object based on the timestamp
+
+        messageRef.push(
+          {
+            "message": $("#chat-entertexthere").val(),
+            "photo_url": loggedUser.photo_url,
+            "name": loggedUser.name,
+            "timestamp": Date()
+          }
+        );
+
+
+        $("#chat-entertexthere").val("");
+
+      }
+    }
+  else {
+   $("#login-modal").modal();
+  }
+}
+
 
 function sign_in(profileRef, result, database){
   $(".logged-out-screen").hide();
