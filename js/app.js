@@ -64,29 +64,26 @@ $(document).ready(function() {
   var gameInfo = {
     '1': {
           'name': 'Grand Theft Auto V',
-          'links': {
-            'wikipedia': 'https://en.wikipedia.org/wiki/Grand_Theft_Auto_V',
-            'official': 'http://www.rockstargames.com/V/',
-            'trailer': 'https://www.youtube.com/watch?v=QkkoHAzjnUs'
-            },
+          'events': 'Specter car show meetup this Saturday at 3pm EST.'
           },
 
     '2': {
           'name': 'Star Wars Battlefront',
-          'links': {
-            'wikipedia': 'https://en.wikipedia.org/wiki/Star_Wars:_Battlefront',
-            'official': 'http://starwars.ea.com/starwars/battlefront',
-            'trailer': 'https://www.youtube.com/watch?v=V2xp-qtUlsQ'
-            }
+          'events': 'Rogue One ingame discussion, all day Sunday. WARNING: SPOILERS!'
           },
 
     '3': {
-          'name': 'Red Dead Redemption',
-          'links': {
-            'wikipedia': 'https://en.wikipedia.org/wiki/Red_Dead_Redemption_2',
-            'official': 'http://www.rockstargames.com/reddeadredemption/',
-            'trailer': 'https://www.youtube.com/watch?v=gmA6MrX81z4'
-            }
+          'name': 'Call of Duty',
+          'events': 'Free for All tournament soon. Contact Johnny for entry.'
+ 
+          },
+    '4': {
+          'name': 'Minecraft',
+          'events': 'New update out now.'
+          },
+    '5': {
+          'name': 'Rocket League',
+          'events': 'Tournament finals this weekend. Streaming on Twitch.'
           }
   }
 
@@ -96,9 +93,7 @@ $(document).ready(function() {
     
     load_channel_messages(loggedUser.id, database);
     $("#game-title").text(gameInfo[channelID]['name']);
-    $("#wiki-link").attr('href', gameInfo[channelID]['links']['wikipedia']);
-    $("#trailer-link").attr('href', gameInfo[channelID]['links']['trailer']);
-    $("#gamesite-link").attr('href', gameInfo[channelID]['links']['official']);
+    $("#game-events").text(gameInfo[channelID]['events']);
 
 });
   

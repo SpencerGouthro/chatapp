@@ -63,7 +63,7 @@ html,body,.container {
 
 #logo {
     padding: 5px;
-    max-width:270px;
+    max-width:200px;
     max-height:270px;
     margin: auto;
 }
@@ -93,7 +93,6 @@ html,body,.container {
 }
 
 .message-item {
-    padding: 10px 15px 10px 15px;
     font-size: 1.25em;
     background-color: #FFF7F9;
 }
@@ -133,8 +132,8 @@ html,body,.container {
 }
 
 .news-images {
-  width: 532px;
-  height: 282px;
+  width: 395px;
+  height: 225px;
   padding: 10px;
 }
 
