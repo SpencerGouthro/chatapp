@@ -15,6 +15,9 @@
 **Note:** These instructions only cover Mac installation and deploy. If you are using a Windows machine, you may need to download a web server in order to view the project in a browser.
 
 
+
+
+
 You can view the app on this github page too here:
 https://spencergouthro.github.io/chatapp/ 
 
