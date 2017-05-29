@@ -1,4 +1,4 @@
-# Spencer's UIT Chat App
+#My Gaming UIT Chat App
 
 ## Installation and Operation Instructions
 
@@ -16,10 +16,12 @@
 
 
 
+## You can view the app on this github page too here:
+'https://spencergouthro.github.io/chatapp/'
 
 
-You can view the app on this github page too here:
-https://spencergouthro.github.io/chatapp/ 
+## About
+
 
 This project is the first official project I set out to create from scratch. It was also the second project I did while attending UIT. 
 
